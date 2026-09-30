@@ -1,7 +1,11 @@
 import base64
 import streamlit as st
 
-st.title("Aplicaciones de Inteligencia Artificial.")
+# Título en color fucsia
+st.markdown(
+    "<h1 style='color: #FF00FF;'>Aplicaciones de Inteligencia Artificial.</h1>",
+    unsafe_allow_html=True,
+)
 
 with st.sidebar:
     st.subheader("Aplicaciones con Inteligencia Artificial.")
