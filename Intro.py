@@ -9,12 +9,6 @@ with st.sidebar:
     "automatizar tareas rutinarias y proporcionar análisis avanzados en tiempo real, lo que "
     "resulta en una mayor eficiencia y precisión en diversos campos."
   )
-  st.write(parrafo)
-
-url_ia="https://sites.google.com/view/aplicacionesdeia/inicio"
-st.subheader("En el siguiente enlace puedes encontrar páginas y ejercicios prácticos")
-st.write(f"Enlace para páginas y ejercicios: [Enlace]({url_ia})")
-col1, col2, col3 = st.columns(3)
 
 with col1:
  
