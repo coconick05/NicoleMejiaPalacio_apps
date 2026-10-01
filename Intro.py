@@ -101,11 +101,11 @@ with col1:
         "https://wptnprewrzw6dv4shnnlv3.streamlit.app/",
     )
     tarjeta(
-        "De foto a texto",
-        "sisisi.jpg",
+        "Asistente PDF",
+        "chatt.jpg",
         200,
-        "transcribe la foto",
-        "https://ocr-audio-y8zjuuyggpkt9gcbamegit.streamlit.app/",
+        "La info que necesitas",
+        "https://chatpdf-jnmlyvpnjjaeeicfmdl9c7.streamlit.app/",
     )
 
 with col2:
