@@ -97,7 +97,7 @@ with col1:
         "Reconocimiento de Objetos",
         "imagenes.jpg",
         200,
-        "YOLO",
+        "Objetos de nicky",
         "https://wptnprewrzw6dv4shnnlv3.streamlit.app/",
     )
     tarjeta(
