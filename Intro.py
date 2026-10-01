@@ -95,10 +95,10 @@ with col1:
     )
     tarjeta(
         "Reconocimiento de Objetos",
-        "txt_to_audio.png",
+        "imagenes.jpg",
         200,
         "YOLO",
-        "https://yolov5cmc.streamlit.app/",
+        "https://wptnprewrzw6dv4shnnlv3.streamlit.app/",
     )
     tarjeta(
         "Entrenando Modelos",
