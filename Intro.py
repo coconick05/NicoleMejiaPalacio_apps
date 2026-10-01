@@ -79,7 +79,7 @@ col1, col2, col3 = st.columns(3)
 with col1:
     tarjeta(
         "Conversión de texto a voz",
-        "txt_to_audio2.png",
+        "gatolente.jpg",
         190,
         "En el siguiente enlace usaremos una de las aplicaciones de Inteligencia Artificial",
         "Texto a voz",
