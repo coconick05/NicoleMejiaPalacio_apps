@@ -114,7 +114,7 @@ with col2:
         "traductor.jpg",
         200,
         "Voz a texto",
-        "https://traductorw.streamlit.app/",
+        "https://traductor-8dwapkhih9hxki5d8qzfx6.streamlit.app/",
     )
     tarjeta(
         "Análisis de Datos",
