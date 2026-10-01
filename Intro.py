@@ -83,7 +83,7 @@ with col1:
         190,
         "En el siguiente enlace usaremos una de las aplicaciones de Inteligencia Artificial",
         "Texto a voz",
-        "https://imultimod.streamlit.app/",
+        "https://visionapp-ljxmcpt7mvoasvtogiba9y.streamlit.app/",
     )
     tarjeta(
         "Reconocimiento de Objetos",
