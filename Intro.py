@@ -134,7 +134,7 @@ with col2:
 with col3:
     tarjeta(
         "Analizar texto",
-        "Chat_pdf.png",
+        "analizatexto.jpg",
         190,
         "texto",
         "https://tdfesp-hem4fsyq6t57nd93acwudh.streamlit.app/",
