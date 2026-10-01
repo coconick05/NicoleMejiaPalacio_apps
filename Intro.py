@@ -62,12 +62,11 @@ def imagen_base64(ruta):
     return f"data:image/{mime};base64,{datos}"
 
 
-def tarjeta(titulo, imagen, ancho, descripcion, etiqueta, url):
+def tarjeta(titulo, imagen, ancho, etiqueta, url):
     html = (
         '<div class="tarjeta">'
         f"<h3>{titulo}</h3>"
         f'<img src="{imagen_base64(imagen)}" width="{ancho}">'
-        f"<p>{descripcion}</p>"
         f'<p>{etiqueta}: <a href="{url}" target="_blank">Enlace</a></p>'
         "</div>"
     )
@@ -81,13 +80,13 @@ with col1:
         "Análisis de Imagen",
         "gatolente.jpg",
         190,
+        "Vision",
         "https://visionapp-ljxmcpt7mvoasvtogiba9y.streamlit.app/",
     )
     tarjeta(
         "Reconocimiento de Objetos",
         "txt_to_audio.png",
         200,
-        "En el siguiente enlace veremos cómo se detectan objetos en imágenes.",
         "YOLO",
         "https://yolov5cmc.streamlit.app/",
     )
@@ -95,7 +94,6 @@ with col1:
         "Entrenando Modelos",
         "OIG5.jpg",
         200,
-        "En el siguiente enlace veremos cómo puedes usar tu modelo entrenado.",
         "YOLO",
         "https://xn3pg24ztuv6fdiqon8qn3.streamlit.app/",
     )
@@ -105,7 +103,6 @@ with col2:
         "Conversión de voz a texto",
         "OIG8.jpg",
         200,
-        "En el siguiente enlace veremos una aplicación que usa la conversión de voz a texto.",
         "Voz a texto",
         "https://traductorw.streamlit.app/",
     )
@@ -113,7 +110,6 @@ with col2:
         "Análisis de Datos",
         "data_analisis.png",
         190,
-        "En el siguiente enlace veremos cómo se pueden analizar datos usando agentes.",
         "Datos",
         "https://dataagente.streamlit.app/",
     )
@@ -121,7 +117,6 @@ with col2:
         "Transcriptor Audio y Video",
         "OIG3.jpg",
         200,
-        "En el siguiente enlace veremos cómo realizamos transcripciones de audio/video.",
         "Transcriptor",
         "https://transcript-whisper.streamlit.app/",
     )
@@ -131,7 +126,6 @@ with col3:
         "Generación en Contexto",
         "Chat_pdf.png",
         190,
-        "En el siguiente enlace veremos una aplicación que usa RAG a partir de un documento (PDF).",
         "RAG",
         "https://chatpdf-cc.streamlit.app/",
     )
@@ -139,7 +133,6 @@ with col3:
         "Análisis de Imagen",
         "OIG4.jpg",
         200,
-        "En el siguiente enlace veremos la capacidad de análisis en imágenes.",
         "Vision",
         "https://vision2-gpt4o.streamlit.app/",
     )
@@ -147,7 +140,6 @@ with col3:
         "Sistema Ciberfísico",
         "OIG6.jpg",
         200,
-        "En el siguiente enlace veremos la capacidad de interacción con el mundo físico.",
         "Vision",
         "https://vision2-gpt4o.streamlit.app/",
     )
