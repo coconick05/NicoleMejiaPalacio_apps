@@ -118,7 +118,7 @@ with col2:
     )
     tarjeta(
         "Análisis de emociones",
-        "data_analisis.png",
+        "emociones.jpg",
         190,
         "Feliz? Triste?",
         "https://sentimenta-3qti2sjcqeeyerxz9wk32j.streamlit.app/",
