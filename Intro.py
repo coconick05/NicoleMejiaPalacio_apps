@@ -145,7 +145,7 @@ with col2:
     )
     tarjeta(
         "Conversión de Texto a Audio",
-        "detecdog.jpg",
+        "Leecuentos.jpg",
         200,
         "Lector de cuentos",
         "https://tgfvsxrnw848nx7zarurro.streamlit.app/",
