@@ -131,7 +131,7 @@ with col2:
     )
     tarjeta(
         "Detección de Objetos",
-        "OIG3.jpg",
+        "detecdog.jpg",
         200,
         "Sube la imagen y detacta los objetos",
         "https://yolov5-nzghwfbupwoc2vvfnszrpd.streamlit.app/",
