@@ -44,9 +44,18 @@ st.markdown(
     font-size: 0.95rem;
     margin: 0 0 10px 0;
 }
-.tarjeta a {
-    color: #6B3FD4;
+.tarjeta a.boton {
+    display: inline-block;
+    background-color: #FFD6E8;
+    color: #8A1C55;
     font-weight: bold;
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 10px;
+    border: 1px solid #F5A9CB;
+}
+.tarjeta a.boton:hover {
+    background-color: #FFC2DC;
 }
 </style>
 """,
@@ -67,7 +76,8 @@ def tarjeta(titulo, imagen, ancho, etiqueta, url):
         '<div class="tarjeta">'
         f"<h3>{titulo}</h3>"
         f'<img src="{imagen_base64(imagen)}" width="{ancho}">'
-        f'<p>{etiqueta}: <a href="{url}" target="_blank">Enlace</a></p>'
+        f"<p>{etiqueta}</p>"
+        f'<a class="boton" href="{url}" target="_blank">Ir a la app</a>'
         "</div>"
     )
     st.markdown(html, unsafe_allow_html=True)
