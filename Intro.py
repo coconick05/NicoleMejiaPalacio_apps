@@ -143,6 +143,13 @@ with col2:
         "Sube la imagen y detacta los objetos",
         "https://yolov5-nzghwfbupwoc2vvfnszrpd.streamlit.app/",
     )
+    tarjeta(
+        "Conversión de Texto a Audio",
+        "detecdog.jpg",
+        200,
+        "Lector de cuentos",
+        "https://tgfvsxrnw848nx7zarurro.streamlit.app/",
+    )
 
 with col3:
     tarjeta(
