@@ -111,7 +111,7 @@ with col1:
 with col2:
     tarjeta(
         "Conversión de voz a texto",
-        "OIG8.jpg",
+        "traductor.jpg",
         200,
         "Voz a texto",
         "https://traductorw.streamlit.app/",
