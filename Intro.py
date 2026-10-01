@@ -101,11 +101,11 @@ with col1:
         "https://wptnprewrzw6dv4shnnlv3.streamlit.app/",
     )
     tarjeta(
-        "Entrenando Modelos",
-        "OIG5.jpg",
+        "De foto a texto",
+        "sisisi.jpg",
         200,
-        "YOLO",
-        "https://xn3pg24ztuv6fdiqon8qn3.streamlit.app/",
+        "transcribe la foto",
+        "https://ocr-audio-y8zjuuyggpkt9gcbamegit.streamlit.app/",
     )
 
 with col2:
