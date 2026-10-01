@@ -140,11 +140,11 @@ with col3:
         "https://tdfesp-hem4fsyq6t57nd93acwudh.streamlit.app/",
     )
     tarjeta(
-        "Análisis de Imagen",
+        "Lector y traductor",
         "OIG4.jpg",
         200,
-        "Vision",
-        "https://vision2-gpt4o.streamlit.app/",
+        "Lee y traduce",
+        "https://ocr-audio-bdzzbfgrxs5s6xpvssa5ji.streamlit.app/",
     )
     tarjeta(
         "Sistema Ciberfísico",
