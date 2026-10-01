@@ -7,6 +7,12 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
+# Texto debajo del título
+st.markdown(
+    "<p style='color: #C8A2C8; font-size: 1.1rem;'>Portofolio Nicole Mejía</p>",
+    unsafe_allow_html=True,
+)
+
 with st.sidebar:
     st.subheader("Aplicaciones con Inteligencia Artificial.")
     parrafo = (
