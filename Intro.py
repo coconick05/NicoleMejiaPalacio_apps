@@ -115,7 +115,7 @@ with col1:
     )
     tarjeta(
         "Mi primera app",
-        "chatt.jpg",
+        "gatocool.jpg",
         200,
         "La number one",
         "https://mi-primera-app-bbi28p6j4jergbkncc7mmy.streamlit.app/",
