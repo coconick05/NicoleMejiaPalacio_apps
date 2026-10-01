@@ -153,9 +153,9 @@ with col3:
         "https://ocr-audio-bdzzbfgrxs5s6xpvssa5ji.streamlit.app/",
     )
     tarjeta(
-        "Sistema Ciberfísico",
-        "OIG6.jpg",
+        "Nube de palabras",
+        "nube.jpg",
         200,
-        "Vision",
-        "https://vision2-gpt4o.streamlit.app/",
+        "Crea tu nube",
+        "https://wordcloud-mvsd7ygclnxdaentwxmvnq.streamlit.app/",
     )
