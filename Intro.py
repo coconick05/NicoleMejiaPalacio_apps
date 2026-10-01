@@ -113,6 +113,13 @@ with col1:
         "La info que necesitas",
         "https://chatpdf-jnmlyvpnjjaeeicfmdl9c7.streamlit.app/",
     )
+    tarjeta(
+        "Mi primera app",
+        "chatt.jpg",
+        200,
+        "La number one",
+        "https://mi-primera-app-bbi28p6j4jergbkncc7mmy.streamlit.app/",
+    )
 
 with col2:
     tarjeta(
