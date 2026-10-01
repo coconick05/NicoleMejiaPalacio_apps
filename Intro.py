@@ -133,11 +133,11 @@ with col2:
 
 with col3:
     tarjeta(
-        "Generación en Contexto",
+        "Analizar texto",
         "Chat_pdf.png",
         190,
-        "RAG",
-        "https://chatpdf-cc.streamlit.app/",
+        "texto",
+        "https://tdfesp-hem4fsyq6t57nd93acwudh.streamlit.app/",
     )
     tarjeta(
         "Análisis de Imagen",
