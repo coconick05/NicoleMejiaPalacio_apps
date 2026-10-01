@@ -141,7 +141,7 @@ with col3:
     )
     tarjeta(
         "Lector y traductor",
-        "OIG4.jpg",
+        "pensar.jpg",
         200,
         "Lee y traduce",
         "https://ocr-audio-bdzzbfgrxs5s6xpvssa5ji.streamlit.app/",
