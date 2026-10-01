@@ -117,11 +117,11 @@ with col2:
         "https://traductor-8dwapkhih9hxki5d8qzfx6.streamlit.app/",
     )
     tarjeta(
-        "Análisis de Datos",
+        "Análisis de emociones",
         "data_analisis.png",
         190,
-        "Datos",
-        "https://dataagente.streamlit.app/",
+        "Feliz? Triste?",
+        "https://sentimenta-3qti2sjcqeeyerxz9wk32j.streamlit.app/",
     )
     tarjeta(
         "Transcriptor Audio y Video",
