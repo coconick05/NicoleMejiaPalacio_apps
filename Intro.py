@@ -130,11 +130,11 @@ with col2:
         "https://sentimenta-3qti2sjcqeeyerxz9wk32j.streamlit.app/",
     )
     tarjeta(
-        "Transcriptor Audio y Video",
+        "Detección de Objetos",
         "OIG3.jpg",
         200,
-        "Transcriptor",
-        "https://transcript-whisper.streamlit.app/",
+        "Sube la imagen y detacta los objetos",
+        "https://yolov5-nzghwfbupwoc2vvfnszrpd.streamlit.app/",
     )
 
 with col3:
