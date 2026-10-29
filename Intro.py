@@ -261,7 +261,7 @@ PORTAFOLIO_2 = [
         ),
         # Espacio 2
         (
-            "Amaliza tu PDF",
+            "Analiza tu PDF",
             "gatopdf.jpg",
             200,
             "Carga y analiza",
@@ -296,11 +296,11 @@ PORTAFOLIO_2 = [
         ),
         # Espacio 6
         (
-            "Título del espacio 6",
-            "imagen6.jpg",
+            "Visión por Computador",
+            "analizaimagen.jpg",
             200,
-            "Texto debajo de la imagen 6",
-            "https://link-de-la-app-6.streamlit.app/",
+            "Reconoce y detecta",
+            "https://visionunion2.streamlit.app/",
         ),
         # Espacio 7
         (
