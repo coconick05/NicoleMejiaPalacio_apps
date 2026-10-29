@@ -297,7 +297,7 @@ PORTAFOLIO_2 = [
         # Espacio 6
         (
             "Visión por Computador",
-            "analizaimagen.jpg",
+            "vision2.jpg",
             200,
             "Reconoce y detecta",
             "https://visionunion2.streamlit.app/",
