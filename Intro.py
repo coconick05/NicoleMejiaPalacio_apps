@@ -240,17 +240,17 @@ PORTAFOLIO_2 = [
             "Dibujemosss",
             "gatodibujon.jpg",
             190,
-            "texto",
+            "Dibuja como quieras",
             "https://kmfo5yxvnd73kfeskd4eiz.streamlit.app/",
         ),
     ],
     [
         (
-            "Lector y traductor",
-            "pensar.jpg",
+            "Detección de Dígitos Escritos a Mano",
+            "gatonumerico.jpg",
             200,
-            "Lee y traduce",
-            "https://ocr-audio-bdzzbfgrxs5s6xpvssa5ji.streamlit.app/",
+            "Dibuja el nuemero y la maquina lo detacta",
+            "https://mnistpred-ienskwbtzv5nhceefcvmyn.streamlit.app/",
         ),
     ],
     [
