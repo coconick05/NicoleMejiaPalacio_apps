@@ -262,6 +262,32 @@ PORTAFOLIO_2 = [
             "https://eamxbaxpgmfkh7kp2bfemg.streamlit.app/",
         ),
     ],
+    (
+            "Dibujemosss",
+            "gatodibujon.jpg",
+            190,
+            "Dibuja como quieras",
+            "https://kmfo5yxvnd73kfeskd4eiz.streamlit.app/",
+        ),
+    ],
+    [
+        (
+            "Detección de Dígitos Escritos a Mano",
+            "gatonumerico.jpg",
+            200,
+            "Dibuja el nuemero y la maquina lo detacta",
+            "https://mnistpred-ienskwbtzv5nhceefcvmyn.streamlit.app/",
+        ),
+    ],
+    [
+        (
+            "Tablero Inteligente",
+            "gatocontablero.jpg",
+            200,
+            "Dibuja e insterpreta",
+            "https://eamxbaxpgmfkh7kp2bfemg.streamlit.app/",
+        ),
+    ],
 ]
 
 
@@ -283,34 +309,6 @@ if pagina == "home":
     _, izq, der, _ = st.columns([0.5, 2, 2, 0.5])
 
     with izq:
-        tarjeta_home(
-            "Primer portafolio",
-            "gatolente.jpg",
-            "Mis primeras aplicaciones de IA: visión, voz, texto y más.",
-        )
-        st.button(
-            "Entrar",
-            on_click=ir_a,
-            args=("portafolio1",),
-            key="entrar_1",
-            use_container_width=True,
-        )
-
-    with der:
-        tarjeta_home(
-            "Segundo portafolio",
-            "gatodibujon.jpg",
-            "Nuevas aplicaciones y proyectos creativos.",
-        )
-        st.button(
-            "Entrar",
-            on_click=ir_a,
-            args=("portafolio2",),
-            key="entrar_2",
-            use_container_width=True,
-        )
-
-with izq:
         tarjeta_home(
             "Primer portafolio",
             "gatolente.jpg",
