@@ -1,4 +1,5 @@
 import base64
+import os
 import streamlit as st
 
 st.set_page_config(page_title="Portafolio Nicole Mejía", layout="wide")
@@ -104,21 +105,6 @@ st.markdown(
     font-size: 1rem;
     margin: 0;
 }
-/* Espacios vacíos (próximamente) */
-.tarjeta-vacia {
-    background-color: #F3ECFC;
-    border: 2px dashed #C9B3F0;
-    border-radius: 16px;
-    padding: 18px;
-    margin-bottom: 20px;
-    min-height: 220px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #8A6FBF;
-    font-weight: bold;
-    font-size: 1.05rem;
-}
 </style>
 """,
     unsafe_allow_html=True,
@@ -137,10 +123,15 @@ def imagen_base64(ruta):
 
 
 def tarjeta(titulo, imagen, ancho, etiqueta, url):
+    # Si la imagen no existe todavía, la tarjeta se muestra sin imagen
+    if os.path.exists(imagen):
+        img_html = f'<img src="{imagen_base64(imagen)}" width="{ancho}">'
+    else:
+        img_html = ""
     html = (
         '<div class="tarjeta">'
         f"<h3>{titulo}</h3>"
-        f'<img src="{imagen_base64(imagen)}" width="{ancho}">'
+        f"{img_html}"
         f"<p>{etiqueta}</p>"
         f'<a class="boton" href="{url}" target="_blank">Ir a la app</a>'
         "</div>"
@@ -159,17 +150,16 @@ def tarjeta_home(titulo, imagen, descripcion):
     st.markdown(html, unsafe_allow_html=True)
 
 
-def tarjeta_vacia():
-    st.markdown(
-        '<div class="tarjeta-vacia">Próximamente ✨</div>',
-        unsafe_allow_html=True,
-    )
-
-
 # ---------------------------------------------------------------------------
-# Datos de los portafolios: cada lista interna es una columna
-# (titulo, imagen, ancho, etiqueta, url)
-# Usa None para dejar un espacio vacío.
+# Datos de los portafolios: cada lista interna es una columna.
+# Cada tarjeta tiene este formato:
+#   (
+#       "TÍTULO de la tarjeta",
+#       "NOMBRE_DE_LA_IMAGEN.jpg",
+#       ANCHO_DE_LA_IMAGEN,
+#       "TEXTO debajo de la imagen",
+#       "LINK de la app",
+#   )
 # ---------------------------------------------------------------------------
 PORTAFOLIO_1 = [
     [
@@ -257,9 +247,11 @@ PORTAFOLIO_1 = [
     ],
 ]
 
-# 10 espacios en total: 4 + 3 + 3 (3 con apps y 7 "Próximamente")
+# 10 espacios en total: 4 + 3 + 3
 PORTAFOLIO_2 = [
+    # ----------------------- COLUMNA 1 (espacios 1 al 4) -----------------------
     [
+        # Espacio 1 (ya tiene app)
         (
             "Dibujemosss",
             "gatodibujon.jpg",
@@ -267,11 +259,34 @@ PORTAFOLIO_2 = [
             "Dibuja como quieras",
             "https://kmfo5yxvnd73kfeskd4eiz.streamlit.app/",
         ),
-        None,
-        None,
-        None,
+        # Espacio 2
+        (
+            "Título del espacio 2",
+            "imagen2.jpg",
+            200,
+            "Texto debajo de la imagen 2",
+            "https://link-de-la-app-2.streamlit.app/",
+        ),
+        # Espacio 3
+        (
+            "Título del espacio 3",
+            "imagen3.jpg",
+            200,
+            "Texto debajo de la imagen 3",
+            "https://link-de-la-app-3.streamlit.app/",
+        ),
+        # Espacio 4
+        (
+            "Título del espacio 4",
+            "imagen4.jpg",
+            200,
+            "Texto debajo de la imagen 4",
+            "https://link-de-la-app-4.streamlit.app/",
+        ),
     ],
+    # ----------------------- COLUMNA 2 (espacios 5 al 7) -----------------------
     [
+        # Espacio 5 (ya tiene app)
         (
             "Detección de Dígitos Escritos a Mano",
             "gatonumerico.jpg",
@@ -279,10 +294,26 @@ PORTAFOLIO_2 = [
             "Dibuja el número y la máquina lo detecta",
             "https://mnistpred-ienskwbtzv5nhceefcvmyn.streamlit.app/",
         ),
-        None,
-        None,
+        # Espacio 6
+        (
+            "Título del espacio 6",
+            "imagen6.jpg",
+            200,
+            "Texto debajo de la imagen 6",
+            "https://link-de-la-app-6.streamlit.app/",
+        ),
+        # Espacio 7
+        (
+            "Título del espacio 7",
+            "imagen7.jpg",
+            200,
+            "Texto debajo de la imagen 7",
+            "https://link-de-la-app-7.streamlit.app/",
+        ),
     ],
+    # ----------------------- COLUMNA 3 (espacios 8 al 10) ----------------------
     [
+        # Espacio 8 (ya tiene app)
         (
             "Tablero Inteligente",
             "gatocontablero.jpg",
@@ -290,8 +321,22 @@ PORTAFOLIO_2 = [
             "Dibuja e interpreta",
             "https://eamxbaxpgmfkh7kp2bfemg.streamlit.app/",
         ),
-        None,
-        None,
+        # Espacio 9
+        (
+            "Título del espacio 9",
+            "imagen9.jpg",
+            200,
+            "Texto debajo de la imagen 9",
+            "https://link-de-la-app-9.streamlit.app/",
+        ),
+        # Espacio 10
+        (
+            "Título del espacio 10",
+            "imagen10.jpg",
+            200,
+            "Texto debajo de la imagen 10",
+            "https://link-de-la-app-10.streamlit.app/",
+        ),
     ],
 ]
 
@@ -302,10 +347,7 @@ def mostrar_portafolio(columnas_datos):
     for col, apps in zip(columnas, columnas_datos):
         with col:
             for app in apps:
-                if app is None:
-                    tarjeta_vacia()
-                else:
-                    tarjeta(*app)
+                tarjeta(*app)
 
 
 # ---------------------------------------------------------------------------
