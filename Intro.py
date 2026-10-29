@@ -277,11 +277,11 @@ PORTAFOLIO_2 = [
         ),
         # Espacio 4
         (
-            "Título del espacio 4",
-            "imagen4.jpg",
+            "Lector de Sensor MQTT",
+            "gatomqtt.jpg",
             200,
-            "Texto debajo de la imagen 4",
-            "https://link-de-la-app-4.streamlit.app/",
+            "recibe los datos",
+            "https://recepmqttnm.streamlit.app/",
         ),
     ],
     # ----------------------- COLUMNA 2 (espacios 5 al 7) -----------------------
