@@ -1,13 +1,26 @@
 import base64
 import streamlit as st
 
-# Título en color fucsia
+st.set_page_config(page_title="Portafolio Nicole Mejía", layout="wide")
+
+# ---------------------------------------------------------------------------
+# Estado de navegación
+# ---------------------------------------------------------------------------
+if "pagina" not in st.session_state:
+    st.session_state.pagina = "home"
+
+
+def ir_a(pagina):
+    st.session_state.pagina = pagina
+
+
+# ---------------------------------------------------------------------------
+# Título y sidebar (se muestran en todas las páginas)
+# ---------------------------------------------------------------------------
 st.markdown(
     "<h1 style='color: #FF00FF;'>Aplicaciones de Inteligencia Artificial.</h1>",
     unsafe_allow_html=True,
 )
-
-# Texto debajo del título
 st.markdown(
     "<p style='color: #C8A2C8; font-size: 1.1rem;'>Portofolio Nicole Mejía</p>",
     unsafe_allow_html=True,
@@ -15,14 +28,17 @@ st.markdown(
 
 with st.sidebar:
     st.subheader("Aplicaciones con Inteligencia Artificial.")
-    parrafo = (
+    st.write(
         "La inteligencia artificial permite mejorar la toma de decisiones con el uso de datos, "
         "automatizar tareas rutinarias y proporcionar análisis avanzados en tiempo real, lo que "
         "resulta en una mayor eficiencia y precisión en diversos campos."
     )
-    st.write(parrafo)
+    if st.session_state.pagina != "home":
+        st.button("🏠 Volver al inicio", on_click=ir_a, args=("home",), key="side_home")
 
-# Estilos de las tarjetas
+# ---------------------------------------------------------------------------
+# Estilos
+# ---------------------------------------------------------------------------
 st.markdown(
     """
 <style>
@@ -63,12 +79,40 @@ st.markdown(
 .tarjeta a.boton:hover {
     background-color: #FFC2DC;
 }
+/* Tarjetas del home (más grandes) */
+.tarjeta-home {
+    background-color: #E6DAFA;
+    border: 1px solid #C9B3F0;
+    border-radius: 20px;
+    padding: 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+.tarjeta-home h2 {
+    color: #4B2C82;
+    margin: 0 0 14px 0;
+}
+.tarjeta-home img {
+    border-radius: 14px;
+    width: 260px;
+    max-width: 100%;
+    margin-bottom: 14px;
+}
+.tarjeta-home p {
+    color: #2E2447;
+    font-size: 1rem;
+    margin: 0;
+}
 </style>
 """,
     unsafe_allow_html=True,
 )
 
 
+# ---------------------------------------------------------------------------
+# Funciones auxiliares
+# ---------------------------------------------------------------------------
 def imagen_base64(ruta):
     extension = ruta.split(".")[-1].lower()
     mime = "jpeg" if extension in ("jpg", "jpeg") else extension
@@ -89,110 +133,187 @@ def tarjeta(titulo, imagen, ancho, etiqueta, url):
     st.markdown(html, unsafe_allow_html=True)
 
 
-col1, col2, col3 = st.columns(3)
+def tarjeta_home(titulo, imagen, descripcion):
+    html = (
+        '<div class="tarjeta-home">'
+        f"<h2>{titulo}</h2>"
+        f'<img src="{imagen_base64(imagen)}">'
+        f"<p>{descripcion}</p>"
+        "</div>"
+    )
+    st.markdown(html, unsafe_allow_html=True)
 
-with col1:
-    tarjeta(
-        "Análisis de Imagen",
-        "gatolente.jpg",
-        190,
-        "Vision",
-        "https://visionapp-ljxmcpt7mvoasvtogiba9y.streamlit.app/",
-    )
-    tarjeta(
-        "Reconocimiento de Objetos",
-        "imagenes.jpg",
-        200,
-        "Objetos de nicky",
-        "https://wptnprewrzw6dv4shnnlv3.streamlit.app/",
-    )
-    tarjeta(
-        "Asistente PDF",
-        "chatt.jpg",
-        200,
-        "La info que necesitas",
-        "https://chatpdf-jnmlyvpnjjaeeicfmdl9c7.streamlit.app/",
-    )
-    tarjeta(
-        "Mi primera app",
-        "gatocool.jpg",
-        200,
-        "La number one",
-        "https://mi-primera-app-bbi28p6j4jergbkncc7mmy.streamlit.app/",
-    )
 
-with col2:
-    tarjeta(
-        "Conversión de voz a texto",
-        "traductor.jpg",
-        200,
-        "Voz a texto",
-        "https://traductor-8dwapkhih9hxki5d8qzfx6.streamlit.app/",
-    )
-    tarjeta(
-        "Análisis de emociones",
-        "emociones.jpg",
-        190,
-        "Feliz? Triste?",
-        "https://sentimenta-3qti2sjcqeeyerxz9wk32j.streamlit.app/",
-    )
-    tarjeta(
-        "Detección de Objetos",
-        "detecdog.jpg",
-        200,
-        "Sube la imagen y detacta los objetos",
-        "https://yolov5-nzghwfbupwoc2vvfnszrpd.streamlit.app/",
-    )
-    tarjeta(
-        "Conversión de Texto a Audio",
-        "Leecuentos.jpg",
-        200,
-        "Lector de cuentos",
-        "https://tgfvsxrnw848nx7zarurro.streamlit.app/",
-    )
+# ---------------------------------------------------------------------------
+# Datos de los portafolios: cada lista interna es una columna
+# (titulo, imagen, ancho, etiqueta, url)
+# ---------------------------------------------------------------------------
+PORTAFOLIO_1 = [
+    [
+        (
+            "Análisis de Imagen",
+            "gatolente.jpg",
+            190,
+            "Vision",
+            "https://visionapp-ljxmcpt7mvoasvtogiba9y.streamlit.app/",
+        ),
+        (
+            "Reconocimiento de Objetos",
+            "imagenes.jpg",
+            200,
+            "Objetos de nicky",
+            "https://wptnprewrzw6dv4shnnlv3.streamlit.app/",
+        ),
+        (
+            "Asistente PDF",
+            "chatt.jpg",
+            200,
+            "La info que necesitas",
+            "https://chatpdf-jnmlyvpnjjaeeicfmdl9c7.streamlit.app/",
+        ),
+        (
+            "Mi primera app",
+            "gatocool.jpg",
+            200,
+            "La number one",
+            "https://mi-primera-app-bbi28p6j4jergbkncc7mmy.streamlit.app/",
+        ),
+    ],
+    [
+        (
+            "Conversión de voz a texto",
+            "traductor.jpg",
+            200,
+            "Voz a texto",
+            "https://traductor-8dwapkhih9hxki5d8qzfx6.streamlit.app/",
+        ),
+        (
+            "Análisis de emociones",
+            "emociones.jpg",
+            190,
+            "Feliz? Triste?",
+            "https://sentimenta-3qti2sjcqeeyerxz9wk32j.streamlit.app/",
+        ),
+        (
+            "Detección de Objetos",
+            "detecdog.jpg",
+            200,
+            "Sube la imagen y detacta los objetos",
+            "https://yolov5-nzghwfbupwoc2vvfnszrpd.streamlit.app/",
+        ),
+        (
+            "Conversión de Texto a Audio",
+            "Leecuentos.jpg",
+            200,
+            "Lector de cuentos",
+            "https://tgfvsxrnw848nx7zarurro.streamlit.app/",
+        ),
+    ],
+    [
+        (
+            "Analizar texto",
+            "analizatexto.jpg",
+            190,
+            "texto",
+            "https://tdfesp-hem4fsyq6t57nd93acwudh.streamlit.app/",
+        ),
+        (
+            "Lector y traductor",
+            "pensar.jpg",
+            200,
+            "Lee y traduce",
+            "https://ocr-audio-bdzzbfgrxs5s6xpvssa5ji.streamlit.app/",
+        ),
+        (
+            "Nube de palabras",
+            "nube.jpg",
+            200,
+            "Crea tu nube",
+            "https://wordcloud-mvsd7ygclnxdaentwxmvnq.streamlit.app/",
+        ),
+    ],
+]
 
-with col3:
-    tarjeta(
-        "Analizar texto",
-        "analizatexto.jpg",
-        190,
-        "texto",
-        "https://tdfesp-hem4fsyq6t57nd93acwudh.streamlit.app/",
-    )
-    tarjeta(
-        "Lector y traductor",
-        "pensar.jpg",
-        200,
-        "Lee y traduce",
-        "https://ocr-audio-bdzzbfgrxs5s6xpvssa5ji.streamlit.app/",
-    )
-    tarjeta(
-        "Nube de palabras",
-        "nube.jpg",
-        200,
-        "Crea tu nube",
-        "https://wordcloud-mvsd7ygclnxdaentwxmvnq.streamlit.app/",
-    )
+PORTAFOLIO_2 = [
+    [
+        (
+            "Dibujemosss",
+            "gatodibujon.jpg",
+            190,
+            "texto",
+            "https://kmfo5yxvnd73kfeskd4eiz.streamlit.app/",
+        ),
+    ],
+    [
+        (
+            "Lector y traductor",
+            "pensar.jpg",
+            200,
+            "Lee y traduce",
+            "https://ocr-audio-bdzzbfgrxs5s6xpvssa5ji.streamlit.app/",
+        ),
+    ],
+    [
+        (
+            "Nube de palabras",
+            "nube.jpg",
+            200,
+            "Crea tu nube",
+            "https://wordcloud-mvsd7ygclnxdaentwxmvnq.streamlit.app/",
+        ),
+    ],
+]
 
-with col4:
-    tarjeta(
-        "Dibujemosss",
-        "analizatexto.jpg",
-        190,
-        "texto",
-        "https://kmfo5yxvnd73kfeskd4eiz.streamlit.app/",
-    )
-    tarjeta(
-        "Lector y traductor",
-        "pensar.jpg",
-        200,
-        "Lee y traduce",
-        "https://ocr-audio-bdzzbfgrxs5s6xpvssa5ji.streamlit.app/",
-    )
-    tarjeta(
-        "Nube de palabras",
-        "nube.jpg",
-        200,
-        "Crea tu nube",
-        "https://wordcloud-mvsd7ygclnxdaentwxmvnq.streamlit.app/",
-    )
+
+def mostrar_portafolio(columnas_datos):
+    st.button("← Volver al inicio", on_click=ir_a, args=("home",), key="top_home")
+    columnas = st.columns(len(columnas_datos))
+    for col, apps in zip(columnas, columnas_datos):
+        with col:
+            for app in apps:
+                tarjeta(*app)
+
+
+# ---------------------------------------------------------------------------
+# Páginas
+# ---------------------------------------------------------------------------
+pagina = st.session_state.pagina
+
+if pagina == "home":
+    _, izq, der, _ = st.columns([0.5, 2, 2, 0.5])
+
+    with izq:
+        tarjeta_home(
+            "Primer portafolio",
+            "gatolente.jpg",
+            "Mis primeras aplicaciones de IA: visión, voz, texto y más.",
+        )
+        st.button(
+            "Entrar",
+            on_click=ir_a,
+            args=("portafolio1",),
+            key="entrar_1",
+            use_container_width=True,
+        )
+
+    with der:
+        tarjeta_home(
+            "Segundo portafolio",
+            "gatodibujon.jpg",
+            "Nuevas aplicaciones y proyectos creativos.",
+        )
+        st.button(
+            "Entrar",
+            on_click=ir_a,
+            args=("portafolio2",),
+            key="entrar_2",
+            use_container_width=True,
+        )
+
+elif pagina == "portafolio1":
+    st.subheader("Primer portafolio")
+    mostrar_portafolio(PORTAFOLIO_1)
+
+elif pagina == "portafolio2":
+    st.subheader("Segundo portafolio")
+    mostrar_portafolio(PORTAFOLIO_2)
