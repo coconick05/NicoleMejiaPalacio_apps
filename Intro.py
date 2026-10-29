@@ -269,11 +269,11 @@ PORTAFOLIO_2 = [
         ),
         # Espacio 3
         (
-            "Título del espacio 3",
-            "imagen3.jpg",
+            "Análisis de Imagen",
+            "analizaimagen.jpg",
             200,
-            "Texto debajo de la imagen 3",
-            "https://link-de-la-app-3.streamlit.app/",
+            "Analicemos la imagen",
+            "https://visionapp-ljxmcpt7mvoasvtogiba9y.streamlit.app/",
         ),
         # Espacio 4
         (
