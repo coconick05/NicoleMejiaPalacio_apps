@@ -304,11 +304,11 @@ PORTAFOLIO_2 = [
         ),
         # Espacio 7
         (
-            "Título del espacio 7",
-            "imagen7.jpg",
+            "Tablero para pintar",
+            "gatopintor.jpg",
             200,
-            "Texto debajo de la imagen 7",
-            "https://link-de-la-app-7.streamlit.app/",
+            "Pinta, pinta, pinta",
+            "https://b4ehllrs5tcy7fcofegbom.streamlit.app/",
         ),
     ],
     # ----------------------- COLUMNA 3 (espacios 8 al 10) ----------------------
