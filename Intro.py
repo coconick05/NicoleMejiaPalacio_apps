@@ -255,11 +255,11 @@ PORTAFOLIO_2 = [
     ],
     [
         (
-            "Nube de palabras",
-            "nube.jpg",
+            "Tablero Inteligente",
+            "gatocontablero.jpg",
             200,
-            "Crea tu nube",
-            "https://wordcloud-mvsd7ygclnxdaentwxmvnq.streamlit.app/",
+            "Dibuja e insterpreta",
+            "https://eamxbaxpgmfkh7kp2bfemg.streamlit.app/",
         ),
     ],
 ]
