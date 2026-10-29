@@ -310,6 +310,34 @@ if pagina == "home":
             use_container_width=True,
         )
 
+with izq:
+        tarjeta_home(
+            "Primer portafolio",
+            "gatolente.jpg",
+            "Mis primeras aplicaciones de IA: visión, voz, texto y más.",
+        )
+        st.button(
+            "Entrar",
+            on_click=ir_a,
+            args=("portafolio1",),
+            key="entrar_1",
+            use_container_width=True,
+        )
+
+    with der:
+        tarjeta_home(
+            "Segundo portafolio",
+            "gatodibujon.jpg",
+            "Nuevas aplicaciones y proyectos creativos.",
+        )
+        st.button(
+            "Entrar",
+            on_click=ir_a,
+            args=("portafolio2",),
+            key="entrar_2",
+            use_container_width=True,
+        )
+
 elif pagina == "portafolio1":
     st.subheader("Primer portafolio")
     mostrar_portafolio(PORTAFOLIO_1)
