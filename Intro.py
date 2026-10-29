@@ -104,6 +104,21 @@ st.markdown(
     font-size: 1rem;
     margin: 0;
 }
+/* Espacios vacíos (próximamente) */
+.tarjeta-vacia {
+    background-color: #F3ECFC;
+    border: 2px dashed #C9B3F0;
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 20px;
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8A6FBF;
+    font-weight: bold;
+    font-size: 1.05rem;
+}
 </style>
 """,
     unsafe_allow_html=True,
@@ -144,9 +159,17 @@ def tarjeta_home(titulo, imagen, descripcion):
     st.markdown(html, unsafe_allow_html=True)
 
 
+def tarjeta_vacia():
+    st.markdown(
+        '<div class="tarjeta-vacia">Próximamente ✨</div>',
+        unsafe_allow_html=True,
+    )
+
+
 # ---------------------------------------------------------------------------
 # Datos de los portafolios: cada lista interna es una columna
 # (titulo, imagen, ancho, etiqueta, url)
+# Usa None para dejar un espacio vacío.
 # ---------------------------------------------------------------------------
 PORTAFOLIO_1 = [
     [
@@ -198,7 +221,7 @@ PORTAFOLIO_1 = [
             "Detección de Objetos",
             "detecdog.jpg",
             200,
-            "Sube la imagen y detacta los objetos",
+            "Sube la imagen y detecta los objetos",
             "https://yolov5-nzghwfbupwoc2vvfnszrpd.streamlit.app/",
         ),
         (
@@ -234,6 +257,7 @@ PORTAFOLIO_1 = [
     ],
 ]
 
+# 10 espacios en total: 4 + 3 + 3 (3 con apps y 7 "Próximamente")
 PORTAFOLIO_2 = [
     [
         (
@@ -243,50 +267,31 @@ PORTAFOLIO_2 = [
             "Dibuja como quieras",
             "https://kmfo5yxvnd73kfeskd4eiz.streamlit.app/",
         ),
+        None,
+        None,
+        None,
     ],
     [
         (
             "Detección de Dígitos Escritos a Mano",
             "gatonumerico.jpg",
             200,
-            "Dibuja el nuemero y la maquina lo detacta",
+            "Dibuja el número y la máquina lo detecta",
             "https://mnistpred-ienskwbtzv5nhceefcvmyn.streamlit.app/",
         ),
+        None,
+        None,
     ],
     [
         (
             "Tablero Inteligente",
             "gatocontablero.jpg",
             200,
-            "Dibuja e insterpreta",
+            "Dibuja e interpreta",
             "https://eamxbaxpgmfkh7kp2bfemg.streamlit.app/",
         ),
-    ],
-    (
-            "Dibujemosss",
-            "gatodibujon.jpg",
-            190,
-            "Dibuja como quieras",
-            "https://kmfo5yxvnd73kfeskd4eiz.streamlit.app/",
-        ),
-    ],
-    [
-        (
-            "Detección de Dígitos Escritos a Mano",
-            "gatonumerico.jpg",
-            200,
-            "Dibuja el nuemero y la maquina lo detacta",
-            "https://mnistpred-ienskwbtzv5nhceefcvmyn.streamlit.app/",
-        ),
-    ],
-    [
-        (
-            "Tablero Inteligente",
-            "gatocontablero.jpg",
-            200,
-            "Dibuja e insterpreta",
-            "https://eamxbaxpgmfkh7kp2bfemg.streamlit.app/",
-        ),
+        None,
+        None,
     ],
 ]
 
@@ -297,7 +302,10 @@ def mostrar_portafolio(columnas_datos):
     for col, apps in zip(columnas, columnas_datos):
         with col:
             for app in apps:
-                tarjeta(*app)
+                if app is None:
+                    tarjeta_vacia()
+                else:
+                    tarjeta(*app)
 
 
 # ---------------------------------------------------------------------------
