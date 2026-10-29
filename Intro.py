@@ -329,14 +329,6 @@ PORTAFOLIO_2 = [
             "Control por internet",
             "https://mqtt2nm.streamlit.app/",
         ),
-        # Espacio 10
-        (
-            "Título del espacio 10",
-            "imagen10.jpg",
-            200,
-            "Texto debajo de la imagen 10",
-            "https://link-de-la-app-10.streamlit.app/",
-        ),
     ],
 ]
 
