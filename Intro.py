@@ -173,3 +173,26 @@ with col3:
         "Crea tu nube",
         "https://wordcloud-mvsd7ygclnxdaentwxmvnq.streamlit.app/",
     )
+
+with col4:
+    tarjeta(
+        "Dibujemosss",
+        "analizatexto.jpg",
+        190,
+        "texto",
+        "https://kmfo5yxvnd73kfeskd4eiz.streamlit.app/",
+    )
+    tarjeta(
+        "Lector y traductor",
+        "pensar.jpg",
+        200,
+        "Lee y traduce",
+        "https://ocr-audio-bdzzbfgrxs5s6xpvssa5ji.streamlit.app/",
+    )
+    tarjeta(
+        "Nube de palabras",
+        "nube.jpg",
+        200,
+        "Crea tu nube",
+        "https://wordcloud-mvsd7ygclnxdaentwxmvnq.streamlit.app/",
+    )
