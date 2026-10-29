@@ -323,11 +323,11 @@ PORTAFOLIO_2 = [
         ),
         # Espacio 9
         (
-            "Título del espacio 9",
-            "imagen9.jpg",
+            "MQTT control",
+            "catmqtt2.jpg",
             200,
-            "Texto debajo de la imagen 9",
-            "https://link-de-la-app-9.streamlit.app/",
+            "Control por internet",
+            "https://mqtt2nm.streamlit.app/",
         ),
         # Espacio 10
         (
