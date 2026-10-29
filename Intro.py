@@ -261,11 +261,11 @@ PORTAFOLIO_2 = [
         ),
         # Espacio 2
         (
-            "Título del espacio 2",
-            "imagen2.jpg",
+            "Amaliza tu PDF",
+            "gatopdf.jpg",
             200,
-            "Texto debajo de la imagen 2",
-            "https://link-de-la-app-2.streamlit.app/",
+            "Carga y analiza",
+            "https://chatpdf-jnmlyvpnjjaeeicfmdl9c7.streamlit.app/",
         ),
         # Espacio 3
         (
